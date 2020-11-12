@@ -1,4 +1,5 @@
 import React from 'react';
+import Shimmer from './Shimmer';
 import SkeletonEl from './SkeletonEl';
 
 const SkeletonArticle = ({ theme }) => {
@@ -12,6 +13,7 @@ const SkeletonArticle = ({ theme }) => {
         <SkeletonEl type="text" />
         <SkeletonEl type="text" />
       </div>
+      <Shimmer />
     </div>
   );
 };

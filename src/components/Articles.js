@@ -25,7 +25,7 @@ const Articles = () => {
         ))}
 
       {!articles &&
-        [1, 2, 3, 4, 5].map((n) => <SkeletonArticle key={n} theme="dark" />)}
+        [1, 2, 3, 4, 5].map((n) => <SkeletonArticle key={n} theme="light" />)}
     </div>
   );
 };
