@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import SkeletonEl from '../skeletons/SkeletonEl';
+import SkeletonArticle from '../skeletons/SkeletonArticle';
 
 const Articles = () => {
   const [articles, setArticles] = useState(null);
@@ -11,30 +11,22 @@ const Articles = () => {
       setArticles(data);
     }, 5000);
   });
+
   return (
-  <div class="articles">
-    <h2>ARTICLES</h2>
+    <div class="articles">
+      <h2>ARTICLES</h2>
 
-    <SkeletonEl type="title" />
-    <SkeletonEl type="text" />
-    <SkeletonEl type="thumbnail" />
-    <SkeletonEl type="avatar" />
- 
-    {articles && articles.map(article => (
-      <div class="article" key={article.id}>
-        <h3>{article.title}</h3>
-        <p>{article.body}</p>
-      </div>
-    ))}
+      {articles &&
+        articles.map((article) => (
+          <div class="article" key={article.id}>
+            <h3>{article.title}</h3>
+            <p>{article.body}</p>
+          </div>
+        ))}
 
-    {!articles && (
-      <div>
-        <h1>LOADING...</h1>
-      </div>
-    )}
-
-  </div>
-);
+      {!articles && [1, 2, 3, 4, 5].map((n) => <SkeletonArticle key={n} />)}
+    </div>
+  );
 };
 
 export default Articles;
